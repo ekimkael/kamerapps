@@ -21,7 +21,12 @@ const NavBar = () => {
 	const { colorMode, toggleColorMode } = useColorMode()
 
 	return (
-		<HStack as="nav" justifyContent="space-between" mb="10">
+		<HStack
+			as="nav"
+			display={{ base: "none", md: "flex" }}
+			justifyContent="space-between"
+			mb="10"
+		>
 			<Box w="md">
 				<InputGroup>
 					<InputLeftElement mt="1" color="gray.500" pointerEvents="none">

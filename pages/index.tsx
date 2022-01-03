@@ -12,6 +12,7 @@ import {
 	Image,
 	Tag,
 	TagLabel,
+	useColorModeValue,
 } from "@chakra-ui/react"
 
 import data from "./fakelements.json"
@@ -25,36 +26,36 @@ const Home: NextPage = () => {
 			<Head>
 				<title>Kamerapps</title>
 			</Head>
-			<Grid templateColumns="repeat(6, 1fr)" maxH={"100vh"}>
-				<GridItem colSpan={2} px="6">
-					<Center height="100%">
-						<Stack>
-							<Image
-								alt={"Login Image"}
-								objectFit={"cover"}
-								src="./cover.png"
-							/>
-							<Heading as="h1" size="4xl" color="primary">
-								Kamerapps.
-							</Heading>
-							<Text fontSize={{ base: "md", lg: "xl" }} color={"gray.500"}>
-								A curate list of Cameroonian <br />
-								<Tag size="xl" colorScheme="purple" px="2">
-									<TagLabel>Apps • Services • Products</TagLabel>
-								</Tag>
-							</Text>
+			<Grid
+				templateColumns={{ md: "2fr 4fr" }}
+				templateRows={{ base: "1fr 2fr" }}
+				maxH={{ md: "100vh" }}
+			>
+				<Stack justifyContent={{ base: "center" }} px={6}>
+					<Image alt={"Login Image"} objectFit={"cover"} src="./cover.png" />
+					<Heading as="h1" fontSize={{ base: "8xl" }} color="primary">
+						Kamerapps.
+					</Heading>
+					<Text fontSize={{ base: "4xl", lg: "xl" }} color={"gray.500"}>
+						A curate list of Cameroonian <br />
+						<Tag size="xl" colorScheme="purple" px="2">
+							<TagLabel>Apps • Services • Products</TagLabel>
+						</Tag>
+					</Text>
 
-							<Stack direction={{ base: "column", md: "row" }} spacing={4}>
-								<Button size="lg">How It Works</Button>
-								<EditApp />
-							</Stack>
-						</Stack>
-					</Center>
-				</GridItem>
-				<GridItem colSpan={4} bg="gray.50">
-					<Container maxW="container.lg" my="3">
+					<Stack direction="row" spacing={4}>
+						<Button size="lg">How It Works</Button>
+						<EditApp />
+					</Stack>
+				</Stack>
+
+				<Stack bg={useColorModeValue("gray.50", "gray.700")}>
+					<Container my="3" maxW="container.lg">
 						<NavBar />
-						<Grid templateColumns="repeat(3, 1fr)" gap={4}>
+						<Grid
+							templateColumns={{ base: "repeat(2, 1fr)", sm: "repeat(3, 1fr)" }}
+							gap={4}
+						>
 							{data.slice(0, 6).map((element) => (
 								<Card key={element?.id} data={element} />
 							))}
@@ -65,7 +66,7 @@ const Home: NextPage = () => {
 							</Button>
 						</Stack>
 					</Container>
-				</GridItem>
+				</Stack>
 			</Grid>
 		</>
 	)
