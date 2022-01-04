@@ -36,24 +36,16 @@ const ItemDetails = ({ details, isOpen, onClose }: any) => {
 				<ModalBody>
 					<HStack mt="10" justifyContent="space-between">
 						<HStack>
-							<Box
-								w="120px"
-								h="120px"
-								bg="primary"
+							<Image
 								rounded="lg"
-								position="relative"
-							>
-								<Image
-									rounded="lg"
-									height="100%"
-									width="100%"
-									objectFit={"cover"}
-									src={details?.icon}
-									alt={`logo of ${details?.name}`}
-								/>
-							</Box>
+								height={{ base: "80px", md: "120px" }}
+								width={{ base: "80px", md: "120px" }}
+								objectFit={"cover"}
+								src={details?.icon}
+								alt={`logo of ${details?.name}`}
+							/>
 							<Box>
-								<Heading as="h1" size="xl">
+								<Heading as="h1" fontSize={{ base: "2xl", md: "4xl" }}>
 									{details?.name}
 								</Heading>
 
@@ -64,11 +56,14 @@ const ItemDetails = ({ details, isOpen, onClose }: any) => {
 						</HStack>
 						<LinkBox>
 							<LinkOverlay href={details?.apps?.website} isExternal>
-								<Button leftIcon={<ExternaLink />}>Visit website</Button>
+								<Button leftIcon={<ExternaLink />} isTruncated>
+									website
+								</Button>
 							</LinkOverlay>
 						</LinkBox>
 					</HStack>
-					<Text fontSize="xl" color="gray.500" my="6">
+
+					<Text fontSize={{ base: "lg", md: "xl" }} color="gray.500" my="6">
 						{details?.description}
 					</Text>
 					<HStack>
