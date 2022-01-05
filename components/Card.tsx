@@ -38,14 +38,17 @@ export default function Card({ data }: any) {
 					pt={{ base: 2, md: 4 }}
 					spacing={{ base: 1, md: 2 }}
 				>
-					<Heading fontSize={{ base: "xl", md: "2xl" }}>{data?.name}</Heading>
-					<Text
-						color={"gray.500"}
-						textTransform={"uppercase"}
-						fontSize={{ base: "xs", md: "sm" }}
-					>
-						{data?.category}
-					</Text>
+					<Box as="section" textAlign="center">
+						<Heading fontSize={{ base: "xl", md: "2xl" }}>{data?.name}</Heading>
+						<Text
+							color="gray.500"
+							textTransform="uppercase"
+							fontSize={{ base: "xs", md: "sm" }}
+						>
+							{data?.category}
+						</Text>
+					</Box>
+
 					<Button variant="primary" isFullWidth onClick={onOpen}>
 						More details
 					</Button>
