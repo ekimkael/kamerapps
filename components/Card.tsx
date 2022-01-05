@@ -33,7 +33,11 @@ export default function Card({ data }: any) {
 					objectFit={"cover"}
 					alt="logo of the application"
 				/>
-				<Stack pt={6} align="center">
+				<Stack
+					align="center"
+					pt={{ base: 2, md: 4 }}
+					spacing={{ base: 1, md: 2 }}
+				>
 					<Heading fontSize={{ base: "xl", md: "2xl" }}>{data?.name}</Heading>
 					<Text
 						color={"gray.500"}

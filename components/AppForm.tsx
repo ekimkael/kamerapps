@@ -5,6 +5,8 @@ import {
 	FormErrorMessage,
 	FormHelperText,
 	Input,
+	InputGroup,
+	InputLeftAddon,
 	HStack,
 	Select,
 	Textarea,
@@ -63,11 +65,17 @@ const AppForm = () => {
 				</FormLabel>
 
 				<FormControl id="facebook" my="1">
-					<Input placeholder="Facebook account" />
+					<InputGroup>
+						<InputLeftAddon children="https://facebook.com/" />
+						<Input placeholder="Facebook account" />
+					</InputGroup>
 				</FormControl>
 
 				<FormControl id="twitter" my="1">
-					<Input placeholder="Twitter account" />
+					<InputGroup>
+						<InputLeftAddon children="https://twitter.com/" />
+						<Input placeholder="Twitter account" />
+					</InputGroup>
 				</FormControl>
 			</FormControl>
 		</form>

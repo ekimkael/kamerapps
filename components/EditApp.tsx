@@ -18,7 +18,7 @@ const EditApp = () => {
 	return (
 		<>
 			<Button variant="primary" size="lg" onClick={onOpen}>
-				Submit yours
+				Submit your app
 			</Button>
 
 			{isOpen && (

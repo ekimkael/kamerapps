@@ -1,11 +1,9 @@
 import Head from "next/head"
+import Link from "next/link"
 import type { NextPage } from "next"
 import {
 	Button,
 	Container,
-	Center,
-	Grid,
-	GridItem,
 	Heading,
 	Stack,
 	Text,
@@ -17,10 +15,9 @@ import {
 	VStack,
 } from "@chakra-ui/react"
 
-import data from "./fakelements.json"
-import Card from "../components/Card"
 import NavBar from "../components/NavBar"
 import EditApp from "../components/EditApp"
+import ProductsList from "../components/ProductsList"
 
 const Home: NextPage = () => {
 	return (
@@ -61,20 +58,17 @@ const Home: NextPage = () => {
 				<Box bg={useColorModeValue("gray.50", "gray.700")} flex={2}>
 					<Container centerContent my={3} maxW={{ md: "container.lg" }}>
 						<NavBar />
-						<Grid
-							templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(3, 1fr)" }}
-							gap={4}
-						>
-							{data.slice(0, 6).map((element) => (
-								<Card key={element?.id} data={element} />
-							))}
-						</Grid>
+						<ProductsList />
 					</Container>
 
 					<Stack p={8} w="full" alignItems="center" justifyContent="center">
-						<Button variant="primary" size="lg">
-							Voir tous
-						</Button>
+						<Link href="/products">
+							<a>
+								<Button variant="primary" size="lg">
+									See more
+								</Button>
+							</a>
+						</Link>
 					</Stack>
 				</Box>
 			</Stack>

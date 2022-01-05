@@ -1,5 +1,5 @@
 import React from "react"
-import { chakra, Flex, useColorModeValue } from "@chakra-ui/react"
+import { Button, Flex, useColorModeValue } from "@chakra-ui/react"
 
 const Pagination = () => {
 	const PagButton = (props: any) => {
@@ -8,7 +8,7 @@ const Pagination = () => {
 			color: useColorModeValue("white", "gray.200"),
 		}
 		return (
-			<chakra.button
+			<Button
 				mx={1}
 				px={4}
 				py={2}
@@ -19,17 +19,11 @@ const Pagination = () => {
 				{...(props.active && activeStyle)}
 			>
 				{props.children}
-			</chakra.button>
+			</Button>
 		)
 	}
 	return (
-		<Flex
-			bg={useColorModeValue("#F9FAFB", "gray.600")}
-			p={50}
-			w="full"
-			alignItems="center"
-			justifyContent="center"
-		>
+		<Flex p={10} alignItems="center" justifyContent="center">
 			<Flex>
 				<PagButton disabled>previous</PagButton>
 				<PagButton active>1</PagButton>
