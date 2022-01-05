@@ -21,10 +21,10 @@ import {
 	GridItem,
 	Image,
 } from "@chakra-ui/react"
-import Play from "./icons/Play"
 import Apple from "./icons/Apple"
 import Twitter from "./icons/Twitter"
 import Facebook from "./icons/Facebook"
+import PlayStore from "./icons/PlayStore"
 import ExternaLink from "./icons/ExternaLink"
 
 const ItemDetails = ({ details, isOpen, onClose }: any) => {
@@ -38,8 +38,8 @@ const ItemDetails = ({ details, isOpen, onClose }: any) => {
 						<HStack>
 							<Image
 								rounded="lg"
-								height={{ base: "60px", md: "120px" }}
-								width={{ base: "60px", md: "120px" }}
+								height={{ base: "60px", md: "100px" }}
+								width={{ base: "60px", md: "100px" }}
 								objectFit={"cover"}
 								src={details?.icon}
 								alt={`logo of ${details?.name}`}
@@ -72,13 +72,13 @@ const ItemDetails = ({ details, isOpen, onClose }: any) => {
 						</LinkBox>
 					</HStack>
 
-					<Text fontSize={{ base: "lg", md: "xl" }} color="gray.500" my="6">
+					<Text fontSize={{ base: "md", md: "xl" }} color="gray.500" my="6">
 						{details?.description}
 					</Text>
 					<HStack>
 						<LinkBox>
 							<LinkOverlay href={details?.apps?.android} isExternal>
-								<Button variant="outline" size="lg" leftIcon={<Play />}>
+								<Button variant="outline" size="lg" leftIcon={<PlayStore />}>
 									Play Store
 								</Button>
 							</LinkOverlay>
