@@ -38,27 +38,36 @@ const ItemDetails = ({ details, isOpen, onClose }: any) => {
 						<HStack>
 							<Image
 								rounded="lg"
-								height={{ base: "80px", md: "120px" }}
-								width={{ base: "80px", md: "120px" }}
+								height={{ base: "60px", md: "120px" }}
+								width={{ base: "60px", md: "120px" }}
 								objectFit={"cover"}
 								src={details?.icon}
 								alt={`logo of ${details?.name}`}
 							/>
 							<Box>
-								<Heading as="h1" fontSize={{ base: "2xl", md: "4xl" }}>
+								<Heading as="h1" fontSize={{ base: "xl", md: "3xl" }}>
 									{details?.name}
 								</Heading>
 
-								<Tag size="lg" colorScheme="purple">
+								<Tag size="md" colorScheme="purple">
 									<TagLabel>{details?.category}</TagLabel>
 								</Tag>
 							</Box>
 						</HStack>
-						<LinkBox>
+						<LinkBox display={{ base: "none", md: "block" }}>
 							<LinkOverlay href={details?.apps?.website} isExternal>
-								<Button leftIcon={<ExternaLink />} isTruncated>
-									website
-								</Button>
+								<Button leftIcon={<ExternaLink />}>website</Button>
+							</LinkOverlay>
+						</LinkBox>
+
+						{/* On mobile */}
+						<LinkBox display={{ base: "block", md: "none" }}>
+							<LinkOverlay href={details?.apps?.website} isExternal>
+								<IconButton
+									isRound
+									aria-label="link to the website"
+									icon={<Icon as={ExternaLink} />}
+								/>
 							</LinkOverlay>
 						</LinkBox>
 					</HStack>
