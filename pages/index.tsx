@@ -1,6 +1,3 @@
-import Head from "next/head"
-import Link from "next/link"
-import type { NextPage } from "next"
 import {
 	Button,
 	Container,
@@ -9,24 +6,31 @@ import {
 	Text,
 	Image,
 	Tag,
-	TagLabel,
-	useColorModeValue,
 	Box,
 	VStack,
+	TagLabel,
+	useColorModeValue,
 } from "@chakra-ui/react"
-
+import Head from "next/head"
+import Link from "next/link"
 import NavBar from "../components/NavBar"
+import { Items } from "./api/products/new"
 import EditApp from "../components/EditApp"
+import type { NextPage, GetStaticProps } from "next"
 import ProductsList from "../components/ProductsList"
 
-const Home: NextPage = () => {
+const Home: NextPage<Items> = (items) => {
 	return (
 		<>
 			<Head>
-				<title>Kamerapps</title>
+				<title>galerications. | Welcome</title>
 			</Head>
 
-			<Stack direction={{ base: "column", md: "row" }} width="100vw">
+			<Stack
+				direction={{ base: "column", md: "row" }}
+				width="100vw"
+				height="100vh"
+			>
 				<VStack
 					px={6}
 					flex={1}
@@ -37,10 +41,10 @@ const Home: NextPage = () => {
 					<Image alt={"Login Image"} objectFit={"cover"} src="./cover.png" />
 					<Heading
 						as="h1"
-						fontSize={{ base: "5xl", md: "8xl" }}
 						color="primary"
+						fontSize={{ base: "5xl", md: "8xl" }}
 					>
-						Kamerapps.
+						galerications.
 					</Heading>
 					<Text fontSize={{ base: "xl", lg: "4xl" }} color={"gray.500"}>
 						A curate list of Cameroonian <br />
@@ -55,13 +59,13 @@ const Home: NextPage = () => {
 					</Stack>
 				</VStack>
 
-				<Box bg={useColorModeValue("gray.50", "gray.700")} flex={2}>
+				<Stack bg={useColorModeValue("gray.50", "gray.700")} flex={2}>
 					<Container centerContent my={3} maxW={{ md: "container.lg" }}>
 						<NavBar />
-						<ProductsList />
+						<ProductsList data={items} />
 					</Container>
 
-					<Stack p={8} w="full" alignItems="center" justifyContent="center">
+					<Stack p={8} w="full" alignItems="center" justifySelf="flex-end">
 						<Link href="/products">
 							<a>
 								<Button variant="primary" size="lg">
@@ -70,10 +74,20 @@ const Home: NextPage = () => {
 							</a>
 						</Link>
 					</Stack>
-				</Box>
+				</Stack>
 			</Stack>
 		</>
 	)
+}
+
+export const getStaticProps: GetStaticProps = async (context) => {
+	const response = await fetch(`${process.env.API_URL}/api/products`)
+	const { items } = await response.json()
+	return {
+		props: {
+			items,
+		},
+	}
 }
 
 export default Home

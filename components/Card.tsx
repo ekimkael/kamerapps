@@ -29,7 +29,7 @@ export default function Card({ data }: any) {
 					height={{ base: "120px", md: "230px" }}
 					width={{ base: "full", md: "230px" }}
 					margin="0 auto"
-					src={data?.icon}
+					src={data?.icon || "./appIcons/default.png"}
 					objectFit={"cover"}
 					alt="logo of the application"
 				/>

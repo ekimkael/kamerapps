@@ -24,15 +24,15 @@ const EditApp = () => {
 			{isOpen && (
 				<Modal onClose={onClose} isOpen={isOpen} size="lg" isCentered>
 					<ModalOverlay />
-					<ModalContent>
+					<ModalContent pb={5}>
 						<ModalHeader>Submit your product</ModalHeader>
 						<ModalCloseButton />
 						<ModalBody>
-							<AppForm />
+							<AppForm close={onClose} />
 						</ModalBody>
-						<ModalFooter>
+						{/* <ModalFooter>
 							<Button onClick={onClose}>Close</Button>
-						</ModalFooter>
+						</ModalFooter> */}
 					</ModalContent>
 				</Modal>
 			)}

@@ -24,6 +24,32 @@ export const theme = extendTheme({
 						_focus: {
 							borderColor: "primary",
 						},
+						_invalid: {
+							borderColor: "red.500",
+							boxShadow: `0 0 0 1px red`,
+						},
+					},
+				},
+			},
+		},
+		Textarea: {
+			variants: {
+				outline: {
+					field: {
+						_focus: {
+							borderColor: "primary",
+						},
+					},
+				},
+			},
+		},
+		Select: {
+			variants: {
+				outline: {
+					field: {
+						_focus: {
+							borderColor: "primary",
+						},
 					},
 				},
 			},

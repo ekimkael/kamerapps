@@ -41,7 +41,7 @@ const ItemDetails = ({ details, isOpen, onClose }: any) => {
 								height={{ base: "60px", md: "100px" }}
 								width={{ base: "60px", md: "100px" }}
 								objectFit={"cover"}
-								src={details?.icon}
+								src={details?.icon || "./appIcons/default.png"}
 								alt={`logo of ${details?.name}`}
 							/>
 							<Box>
