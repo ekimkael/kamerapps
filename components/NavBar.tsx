@@ -1,21 +1,21 @@
 import {
 	Box,
-	Button,
-	IconButton,
 	Icon,
-	HStack,
 	Input,
-	InputGroup,
-	InputLeftElement,
-	useColorMode,
+	HStack,
+	Button,
 	LinkBox,
+	InputGroup,
+	IconButton,
 	LinkOverlay,
+	useColorMode,
+	InputLeftElement,
 } from "@chakra-ui/react"
+import Sun from "./icons/Sun"
+import Moon from "./icons/Moon"
 import Github from "./icons/Github"
 import Search from "./icons/Search"
 import Twitter from "./icons/Twitter"
-import Moon from "./icons/Moon"
-import Sun from "./icons/Sun"
 
 const NavBar = () => {
 	const { colorMode, toggleColorMode } = useColorMode()
