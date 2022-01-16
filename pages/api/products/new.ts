@@ -35,8 +35,8 @@ const submitProduct = async (
 	db.data = db.data || { items: [] }
 	// Create and query items
 	const item = { ...request.body, id: nanoid(10) }
-	// const { items } = db.data
-	db?.data?.items.push(item)
+	const { items } = db.data
+	items.push(item)
 	await db.write()
 	response.status(200).json(item)
 }

@@ -1,35 +1,50 @@
 {
-	"items": [
-		{
-			"name": "lowdb",
-			"apps": {
-				"website": "https://github.com/typicode/lowdb",
-				"android": "",
-				"ios": ""
-			},
-			"category": "app",
-			"description": "Lowdb doesn't support Node's cluster module.\n\nIf you have large JavaScript objects (~10-100MB) you may hit some performance issues. This is because whenever you call db.write, the whole db.data is serialized and written to storage.\n\nDepending on your use case, this can be fine or not. It can be mitigated by doing batch operations and calling db.write only when you need it.\n\nIf you plan to scale, it's highly recommended to use databases like PostgreSQL, MongoDB, ...",
-			"socials": {
-				"facebook": "typicode",
-				"twitter": "typicode"
-			},
-			"id": "tWPmkGB8kb"
-		},
-		{
-			"name": "Hostme.space",
-			"icon": "/appIcons/hostme.png",
-			"apps": {
-				"website": "https://www.hostme.space/",
-				"android": "",
-				"ios": ""
-			},
-			"category": "service",
-			"description": "Easily deploy your website with hostme.space and get a free subdomain link to share it. Drag and drop a zip or import your website from a GitHub / GitLab project.",
-			"socials": {
-				"facebook": "",
-				"twitter": "hostmespace"
-			},
-			"id": "wBfMhp2yRr"
-		}
-	]
+  "items": [
+    {
+      "name": "lowdb",
+      "apps": {
+        "website": "https://github.com/typicode/lowdb",
+        "android": "",
+        "ios": ""
+      },
+      "category": "app",
+      "description": "Lowdb doesn't support Node's cluster module.\n\nIf you have large JavaScript objects (~10-100MB) you may hit some performance issues. This is because whenever you call db.write, the whole db.data is serialized and written to storage.\n\nDepending on your use case, this can be fine or not. It can be mitigated by doing batch operations and calling db.write only when you need it.\n\nIf you plan to scale, it's highly recommended to use databases like PostgreSQL, MongoDB, ...",
+      "socials": {
+        "facebook": "typicode",
+        "twitter": "typicode"
+      },
+      "id": "tWPmkGB8kb"
+    },
+    {
+      "name": "Hostme.space",
+      "icon": "/appIcons/hostme.png",
+      "apps": {
+        "website": "https://www.hostme.space/",
+        "android": "",
+        "ios": ""
+      },
+      "category": "service",
+      "description": "Easily deploy your website with hostme.space and get a free subdomain link to share it. Drag and drop a zip or import your website from a GitHub / GitLab project.",
+      "socials": {
+        "facebook": "",
+        "twitter": "hostmespace"
+      },
+      "id": "wBfMhp2yRr"
+    },
+    {
+      "name": "LOHCE",
+      "apps": {
+        "website": "https://lohce.com/",
+        "android": "",
+        "ios": ""
+      },
+      "category": "service",
+      "description": "LOHCE est un service en ligne de vente de billet pour des agences de voyages au Cameroun.",
+      "socials": {
+        "facebook": "lohcecommunity",
+        "twitter": "lohceofficial"
+      },
+      "id": "J2HFGqRFtj"
+    }
+  ]
 }

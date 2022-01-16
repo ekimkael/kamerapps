@@ -13,10 +13,10 @@ export interface Props {
 }
 
 const ProductsList = ({
+	data,
 	grid = 3,
 	pagination,
 	itemsPerPage = 6,
-	data,
 }: Props) => {
 	const { items } = data
 
