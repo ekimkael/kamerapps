@@ -2,12 +2,8 @@ import { Items } from "./new"
 import { fileURLToPath } from "url"
 import { join, dirname } from "path"
 import { Low, JSONFile } from "lowdb"
-import type { NextApiRequest, NextApiResponse } from "next"
 
-const getAllProducts = async (
-	request: NextApiRequest,
-	response: NextApiResponse<Items | any>
-) => {
+const getAllProducts = async () => {
 	const __dirname = dirname(fileURLToPath(import.meta.url))
 
 	try {
@@ -21,9 +17,9 @@ const getAllProducts = async (
 		db.data = db.data || { items: [] }
 		// Query items
 		const { items } = db.data
-		response.status(200).json({ items })
+		return items
 	} catch (error) {
-		response.status(500).json({ message: "Internal server error" })
+		console.log(error)
 	}
 }
 

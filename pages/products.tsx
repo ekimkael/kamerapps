@@ -2,6 +2,7 @@ import React from "react"
 import Head from "next/head"
 import NavBar from "../components/NavBar"
 import { Items } from "./api/products/new"
+import getAllProducts from "./api/products"
 import type { NextPage, GetStaticProps } from "next"
 import ProductsList from "../components/ProductsList"
 import { Box, Container, Heading, useColorModeValue } from "@chakra-ui/react"
@@ -31,13 +32,7 @@ const Products: NextPage<Items> = (items) => {
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
-	const response = await fetch(`${process.env.API_URL}/api/products`, {
-		headers: {
-			"User-Agent":
-				"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36",
-		},
-	})
-	const { items } = await response.json()
+	const items = await getAllProducts()
 	return {
 		props: {
 			items,
