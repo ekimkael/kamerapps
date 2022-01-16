@@ -31,7 +31,11 @@ const Products: NextPage<Items> = (items) => {
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
-	const response = await fetch(`${process.env.API_URL}/api/products`)
+	const response = await fetch(`${process.env.API_URL}/api/products`, {
+		headers: {
+			"User-Agent": "*",
+		},
+	})
 	const { items } = await response.json()
 	return {
 		props: {
